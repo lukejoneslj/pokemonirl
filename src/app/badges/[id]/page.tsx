@@ -345,7 +345,12 @@ interface PageProps {
   }
 }
 
-export default async function BadgePage({ params }: PageProps) {
+type Props = {
+  params: { id: string }
+}
+
+export default async function BadgePage(props: Props) {
+  const { params } = props;
   const badgeId = Number.parseInt(params.id, 10);
   
   // Validate badge ID
