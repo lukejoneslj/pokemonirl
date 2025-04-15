@@ -23,7 +23,7 @@ const BADGE_CHALLENGES: Record<number, Challenge[]> = {
     { 
       id: 1, 
       type: 'study', 
-      title: 'The Study Trainer', 
+      title: 'Professor Oak: The Study Trainer', 
       description: 'Learning the principles of stillness and mindfulness. Read "Mindfulness Workbook" from UW-Madison, "How to Pray" from LDS, and "Active Listening Techniques" from Positive Psychology. Study the benefits of reducing distractions and being present, and explore the concept of "beginner\'s mind."', 
       completed: false,
       trainerPath: '/trainers/stillness/study'
@@ -31,7 +31,7 @@ const BADGE_CHALLENGES: Record<number, Challenge[]> = {
     { 
       id: 2, 
       type: 'reflect', 
-      title: 'The Reflect Trainer', 
+      title: 'Sabrina: The Reflect Trainer', 
       description: 'Journaling and reflecting on personal experiences with stillness. Answer reflective questions: When did you feel truly present today? What distractions pull you away from the present moment? After trying breathing techniques, what did you notice? How do you experience stillness in your life? When has prayer brought you peace? How can prayer help cultivate daily stillness?', 
       completed: false,
       trainerPath: '/trainers/stillness/reflect'
@@ -39,7 +39,7 @@ const BADGE_CHALLENGES: Record<number, Challenge[]> = {
     { 
       id: 3, 
       type: 'roleplay', 
-      title: 'The Microlearning Trainer', 
+      title: 'Brock: The Microlearning Trainer', 
       description: 'Engaging in small, actionable practices of stillness. Practice mindful breathing for 5 minutes in silence. Eat one meal mindfully, focusing on taste and texture. Take a short walk without distractions, focusing on your senses. Practice active listening during one conversation with someone you don\'t usually listen to attentively. Pray aloud on your knees, expressing personal thoughts and feelings to God.', 
       completed: false,
       trainerPath: '/trainers/stillness/microlearning'
@@ -47,7 +47,7 @@ const BADGE_CHALLENGES: Record<number, Challenge[]> = {
     { 
       id: 4, 
       type: 'apply', 
-      title: 'The Deeper Practice Trainer', 
+      title: 'Erika: The Deeper Practice Trainer', 
       description: 'Committing to a more significant period of stillness practice. Dedicate 15 minutes each day for two days to mindfulness or prayer. Complete two 4-hour sessions without using your phone during non-work hours, focusing on mindful activities instead of social media. Practice mindful listening during four separate conversations in one day.', 
       completed: false,
       trainerPath: '/trainers/stillness/deeper'
@@ -55,7 +55,7 @@ const BADGE_CHALLENGES: Record<number, Challenge[]> = {
     { 
       id: 5, 
       type: 'boss', 
-      title: 'The Stillness Master', 
+      title: 'Giovanni: The Stillness Gym Leader', 
       description: 'Integrating stillness into daily life over an extended period. For one week, begin each day with 10-15 minutes of mindfulness practice and document your experience. Perform a 14-day social media fast, finding relaxing alternatives. Choose a specific daily activity and practice being fully present during it for one week, reflecting on your focus. Engage in a longer period of stillness during the week and journal about insights. At the end of the 14-day social media fast, write a comprehensive reflection on how stillness has affected your wellbeing.', 
       completed: false,
       trainerPath: '/trainers/stillness/master'
@@ -65,72 +65,77 @@ const BADGE_CHALLENGES: Record<number, Challenge[]> = {
     { 
       id: 6, 
       type: 'study', 
-      title: 'Brother Hands', 
-      description: '"Love without action is just a feeling." Learn about charity through a talk or devotional. Identify what loving like Christ looks like.', 
-      completed: false 
+      title: 'Nurse Joy: Brother Hands', 
+      description: '"Love without action is just a feeling." Study these resources on charity and understanding: "Kindness in Difference" to understand approaching others with empathy, "Seek First to Understand" about listening before being heard, MLK\'s "Letter from Birmingham Jail" on justice and compassion, and President Nelson\'s "Peacemakers Needed" talk on becoming a peacemaker in a contentious world.', 
+      completed: false,
+      trainerPath: '/trainers/charity/study'
     },
     { 
       id: 7, 
       type: 'reflect', 
-      title: 'Sister Grace', 
-      description: '"Is your love conditional?" Reflect on someone who is hard to love. Why? What holds you back?', 
-      completed: false 
+      title: 'Misty: Sister Grace', 
+      description: '"Is your love conditional?" Reflect deeply by answering: 1) Who is someone you struggle to show charity toward and why? 2) When have you felt truly understood by someone who disagreed with you? 3) What barriers prevent you from listening to understand rather than to respond? 4) How might your life change if you chose to be a peacemaker in every interaction? 5) What specific contentious behaviors do you need to abandon?', 
+      completed: false,
+      trainerPath: '/trainers/charity/reflect'
     },
     { 
       id: 8, 
       type: 'roleplay', 
-      title: 'Elder Basket', 
-      description: '"Charity is not just for those who deserve it." Roleplay a moment where you give grace when it\'s hardest.', 
-      completed: false 
+      title: 'Officer Jenny: Elder Basket', 
+      description: '"Charity is not just for those who deserve it." Practice these specific exercises: 1) Ask someone you disagree with to explain their perspective for 5 minutes without interruption, only responding with validation. 2) Have a conversation where you ask five questions before sharing your opinion. 3) When criticized, respond only with "Thank you for sharing that perspective" and reflection rather than defense. 4) Practice using "I" statements instead of accusatory "you" statements during a difficult conversation.', 
+      completed: false,
+      trainerPath: '/trainers/charity/practice'
     },
     { 
       id: 9, 
       type: 'apply', 
-      title: 'Captain Heart', 
-      description: '"Service is love in uniform." Do a kind act daily for 3 days (preferably anonymous).', 
-      completed: false 
+      title: 'Lt. Surge: Captain Heart', 
+      description: '"Service is love in uniform." Complete these 3-day challenges: 1) For one day, commit to zero criticism or contentious speech with anyone, replacing judgment with curiosity. 2) For two days, reach out to someone with different beliefs and find three things you sincerely admire about them. 3) For three days, perform one anonymous act of service each day for someone who would never expect it from you.', 
+      completed: false,
+      trainerPath: '/trainers/charity/apply'
     },
     { 
       id: 10, 
       type: 'boss', 
-      title: 'The Hidden Saint', 
-      description: '"You\'ll know me not by name—but by the love you gave others." Do one sacrificial act of love. Share the experience in a journal or video.', 
-      completed: false 
+      title: 'Cynthia: The Hidden Saint Gym Leader', 
+      description: '"You\'ll know me not by name—but by the love you gave others." Master these challenges over 7+ days: 1) Commit to a 7-day "contention fast"—no arguments, criticisms, or defensive responses. 2) Keep a daily "charity journal" for a week, recording each time you choose understanding over judgment. 3) For 10 days, pray specifically for those you struggle to love, then do one kind act for them. 4) Create and implement a "peacemaker plan" with specific actions to build bridges with someone you\'ve had conflict with.', 
+      completed: false,
+      trainerPath: '/trainers/charity/master'
     },
   ],
   3: [ // Virtue Badge
     { 
       id: 11, 
       type: 'study', 
-      title: 'Sir Honor', 
+      title: 'Lance: Sir Honor', 
       description: '"True strength begins in unseen choices." Read a short piece on virtue. Define what virtue means to you.', 
       completed: false 
     },
     { 
       id: 12, 
       type: 'reflect', 
-      title: 'Lady Truth', 
+      title: 'Lorelei: Lady Truth', 
       description: '"Where in your life are you wearing masks?" Reflect on your small dishonesties or moments you avoid truth.', 
       completed: false 
     },
     { 
       id: 13, 
       type: 'roleplay', 
-      title: 'Brother Flint', 
+      title: 'Bruno: Brother Flint', 
       description: '"The furnace of pressure reveals the shape of your character." Imagine facing a moral test—then journal how you would respond.', 
       completed: false 
     },
     { 
       id: 14, 
       type: 'apply', 
-      title: 'Sister Laurel', 
+      title: 'Agatha: Sister Laurel', 
       description: '"Speak with love. But speak." Live 3 days of high-integrity actions. Do what you say you will.', 
       completed: false 
     },
     { 
       id: 15, 
       type: 'boss', 
-      title: 'Judge Valor', 
+      title: 'Steven: Judge Valor Gym Leader', 
       description: '"Only you know if you\'ve been true." Face a real-life scenario where you must speak or act with integrity.', 
       completed: false 
     },
@@ -139,35 +144,35 @@ const BADGE_CHALLENGES: Record<number, Challenge[]> = {
     { 
       id: 16, 
       type: 'study', 
-      title: 'Scout Blaze', 
+      title: 'Koga: Scout Blaze', 
       description: '"Fear screams. Courage whispers back." Read or watch a short story about spiritual courage. Define your fears.', 
       completed: false 
     },
     { 
       id: 17, 
       type: 'reflect', 
-      title: 'Sister Flare', 
+      title: 'Janine: Sister Flare', 
       description: '"What\'s the truth you\'re afraid to live out loud?" Reflect on what you\'re avoiding due to fear.', 
       completed: false 
     },
     { 
       id: 18, 
       type: 'roleplay', 
-      title: 'Brother Roar', 
+      title: 'Blue: Brother Roar', 
       description: '"Even lions shake sometimes. But they still roar." Write a scenario where you act courageously.', 
       completed: false 
     },
     { 
       id: 19, 
       type: 'apply', 
-      title: 'Elder Torch', 
+      title: 'Red: Elder Torch', 
       description: '"Light the way, even if your voice shakes." Do 3 things that scare you a little (vulnerability, honesty, risk).', 
       completed: false 
     },
     { 
       id: 20, 
       type: 'boss', 
-      title: 'Captain Valor', 
+      title: 'Wallace: Captain Valor Gym Leader', 
       description: '"Will you stand, even when no one else is?" Face one real-world fear (conversation, confrontation, or risk).', 
       completed: false 
     },
@@ -176,35 +181,35 @@ const BADGE_CHALLENGES: Record<number, Challenge[]> = {
     { 
       id: 21, 
       type: 'study', 
-      title: 'Coach Steel', 
+      title: 'Chuck: Coach Steel', 
       description: '"Motivation gets you started. Discipline gets you there." Study a short piece on building discipline. Write a habit you want to build.', 
       completed: false 
     },
     { 
       id: 22, 
       type: 'reflect', 
-      title: 'Sister Rhythm', 
+      title: 'Whitney: Sister Rhythm', 
       description: '"Where are you ruled by impulse?" Reflect on your triggers and what habits derail you.', 
       completed: false 
     },
     { 
       id: 23, 
       type: 'roleplay', 
-      title: 'Brother Grit', 
+      title: 'Morty: Brother Grit', 
       description: '"Discipline means showing up. Especially when you don\'t want to." Roleplay a difficult morning where you stay committed.', 
       completed: false 
     },
     { 
       id: 24, 
       type: 'apply', 
-      title: 'Elder Lockstep', 
+      title: 'Jasmine: Elder Lockstep', 
       description: '"Repetition is your revolution." Do one habit for 5 days straight. Track and reflect.', 
       completed: false 
     },
     { 
       id: 25, 
       type: 'boss', 
-      title: 'General Echo', 
+      title: 'Falkner: General Echo Gym Leader', 
       description: '"The world won\'t change until you do." Complete 10 days of the habit. Submit a final summary of growth.', 
       completed: false 
     },
@@ -213,35 +218,35 @@ const BADGE_CHALLENGES: Record<number, Challenge[]> = {
     { 
       id: 26, 
       type: 'study', 
-      title: 'Sister Ember', 
+      title: 'Blaine: Sister Ember', 
       description: '"Gratitude reframes every moment." Read/watch content on the power of gratitude. Define what you\'re most thankful for.', 
       completed: false 
     },
     { 
       id: 27, 
       type: 'reflect', 
-      title: 'Brother Roots', 
+      title: 'Gardenia: Brother Roots', 
       description: '"You\'re already living someone\'s dream." Reflect on what you take for granted. Write about it.', 
       completed: false 
     },
     { 
       id: 28, 
       type: 'roleplay', 
-      title: 'Sister Song', 
+      title: 'Fantina: Sister Song', 
       description: '"Even in pain, there is praise." Roleplay expressing gratitude in a hard moment.', 
       completed: false 
     },
     { 
       id: 29, 
       type: 'apply', 
-      title: 'The Collector', 
+      title: 'Candice: The Collector', 
       description: '"Every moment is a gift. Collect them." Write 3 thank-you messages. Log gratitude daily for 3 days.', 
       completed: false 
     },
     { 
       id: 30, 
       type: 'boss', 
-      title: 'The Thankful One', 
+      title: 'Volkner: The Thankful One Gym Leader', 
       description: '"Can you be grateful when the blessings hide?" Show gratitude during hardship. Journal the story.', 
       completed: false 
     },
@@ -250,73 +255,73 @@ const BADGE_CHALLENGES: Record<number, Challenge[]> = {
     { 
       id: 31, 
       type: 'study', 
-      title: 'Seeker Dawn', 
-      description: '"You were made for something. Let\'s find out what." Study purpose through scripture/story. Define what lights your fire.', 
+      title: 'Bugsy: The Seeker', 
+      description: '"The path begins with a question." Study purpose and meaning. Read content on faith and life mission.', 
       completed: false 
     },
     { 
       id: 32, 
       type: 'reflect', 
-      title: 'Elder Compass', 
-      description: '"Where have your gifts already been used?" Reflect on moments when you felt most alive and aligned.', 
+      title: 'Maylene: The Pilgrim', 
+      description: '"Every journey is a mirror." Reflect on your life story so far. What patterns emerge? What gives you meaning?', 
       completed: false 
     },
     { 
       id: 33, 
       type: 'roleplay', 
-      title: 'Sister Truthpath', 
-      description: '"What story are you writing?" Write your life\'s mission or obituary as if you lived your purpose.', 
+      title: 'Flannery: The Cartographer', 
+      description: '"Your path will be your own." Write out a possible purpose statement. Practice introducing yourself with it.', 
       completed: false 
     },
     { 
       id: 34, 
       type: 'apply', 
-      title: 'The Artisan', 
-      description: '"Purpose is not a destination. It\'s a direction." Create a weekly plan to align your actions with your purpose.', 
+      title: 'Winona: The Wayfinder', 
+      description: '"Live as if every day reveals your purpose." Conduct 3 experiments in living more purposefully. Seek meaning.', 
       completed: false 
     },
     { 
       id: 35, 
       type: 'boss', 
-      title: 'The Guide', 
-      description: '"Only you can walk your path." Commit to one real-life project or goal for 1 week and follow through.', 
+      title: 'Clair: The Oracle Gym Leader', 
+      description: '"Your purpose is both found and created." Write your purpose statement after all your explorations. Share it.', 
       completed: false 
     },
   ],
-  8: [ // Light Badge (Final)
+  8: [ // Service Badge
     { 
       id: 36, 
       type: 'study', 
-      title: 'The Integrator', 
-      description: '"You have all the tools. Now live them together." Do one act from any previous badge each day for a week.', 
+      title: 'Pryce: The Volunteer', 
+      description: '"Service reveals your gifts." Learn about different forms of service. Study the concept of ministry.', 
       completed: false 
     },
     { 
       id: 37, 
       type: 'reflect', 
-      title: 'The Messenger', 
-      description: '"The light isn\'t just for you—it\'s meant to be shared." Write your testimony or story of growth.', 
+      title: 'Roxanne: The Giver', 
+      description: '"What parts of service scare you?" Reflect on your barriers to service. Consider what it means to "wash feet."', 
       completed: false 
     },
     { 
       id: 38, 
       type: 'roleplay', 
-      title: 'The Pilgrim', 
-      description: '"This isn\'t the end. It\'s the start." Reflect on what\'s next. Record a message to your future self.', 
+      title: 'Brawly: The Server', 
+      description: '"Practice the art of seeing needs." Brainstorm 10 ways you could serve others in your normal life routines.', 
       completed: false 
     },
     { 
       id: 39, 
       type: 'apply', 
-      title: 'The Mentor', 
-      description: '"Become the trainer you once needed." Help someone else begin their journey. Invite or encourage a friend.', 
+      title: 'Wattson: The Minister', 
+      description: '"To serve is to lead." Complete 3 acts of service for people you know. One for family, one for a friend, one for someone in need.', 
       completed: false 
     },
     { 
       id: 40, 
       type: 'boss', 
-      title: 'The Divine Light', 
-      description: '"You were never alone." Commit to living by light. You unlock the final badge when you can honestly say you\'re walking the path—imperfectly, but consistently.', 
+      title: 'Alder: The Servant Leader Gym Leader', 
+      description: '"The greatest among you will be your servant." Design and execute a service project that addresses a real need.', 
       completed: false 
     },
   ],
@@ -331,14 +336,17 @@ const BADGES = {
   5: { name: 'Discipline Badge', icon: '⏰', color: 'bg-orange-500', description: 'Build self-control and resilience through consistent habits.' },
   6: { name: 'Gratitude Badge', icon: '🙏', color: 'bg-green-500', description: 'Cultivate a thankful heart in all circumstances.' },
   7: { name: 'Purpose Badge', icon: '🌱', color: 'bg-indigo-500', description: 'Discover and pursue your unique mission and calling.' },
-  8: { name: 'Light Badge', icon: '💡', color: 'bg-slate-800', description: 'Integrate all virtues to become your best self and guide others.' },
+  8: { name: 'Service Badge', icon: '💪', color: 'bg-slate-800', description: 'Integrate all virtues to become your best self and guide others.' },
 };
 
-// Using any type to bypass Next.js type constraint issues
-// This is necessary because of a type mismatch between expected PageProps and our params structure
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export default async function BadgePage(props: any) {
-  const badgeId = Number.parseInt(props.params.id, 10);
+interface PageProps {
+  params: {
+    id: string;
+  }
+}
+
+export default async function BadgePage({ params }: PageProps) {
+  const badgeId = Number.parseInt(params.id, 10);
   
   // Validate badge ID
   if (Number.isNaN(badgeId) || badgeId < 1 || badgeId > 8) {

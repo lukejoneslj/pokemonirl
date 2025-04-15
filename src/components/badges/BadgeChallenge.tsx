@@ -6,8 +6,6 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { supabase } from '@/lib/supabase';
 import { useRouter } from 'next/navigation';
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogFooter } from '@/components/ui/dialog';
-import { Separator } from '@/components/ui/separator';
 import Link from 'next/link';
 
 // Challenge type mappings for icons and colors
@@ -16,7 +14,7 @@ const CHALLENGE_TYPES = {
   reflect: { icon: '✍️', label: 'Reflect', color: 'bg-purple-100 text-purple-800' },
   roleplay: { icon: '🎭', label: 'Practice', color: 'bg-green-100 text-green-800' },
   apply: { icon: '🚀', label: 'Apply', color: 'bg-orange-100 text-orange-800' },
-  boss: { icon: '👑', label: 'Master', color: 'bg-red-100 text-red-800' },
+  boss: { icon: '👑', label: 'Gym Leader', color: 'bg-red-100 text-red-800' },
 };
 
 // Trainer background narratives for dialog
@@ -55,7 +53,6 @@ export default function BadgeChallenge({
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
   const [isCompleted, setIsCompleted] = useState(challenge.completed);
-  const [dialogOpen, setDialogOpen] = useState(false);
   
   const typeInfo = CHALLENGE_TYPES[challenge.type];
   
@@ -275,9 +272,14 @@ export default function BadgeChallenge({
         className={`
           border-l-4 
           ${isCompleted ? 'border-l-green-500' : isLocked ? 'border-l-gray-300 opacity-60' : 'border-l-blue-500'}
-          ${!isLocked && !isCompleted ? 'cursor-pointer hover:shadow-md transition-shadow' : ''}
+          ${!isLocked && !isCompleted && challenge.trainerPath ? 'cursor-pointer hover:shadow-md transition-shadow' : ''}
         `}
-        onClick={() => !isLocked && setDialogOpen(true)}
+        onClick={() => {
+          if (isLocked) return;
+          if (challenge.trainerPath) {
+            router.push(challenge.trainerPath);
+          }
+        }}
       >
         <CardContent className="p-4">
           <div className="flex items-start gap-4">
@@ -312,7 +314,7 @@ export default function BadgeChallenge({
                     onClick={(e) => e.stopPropagation()}
                   >
                     <Link href={challenge.trainerPath}>
-                      Visit Trainer
+                      Challenge Trainer
                     </Link>
                   </Button>
                 )}
@@ -333,84 +335,6 @@ export default function BadgeChallenge({
           </div>
         </CardContent>
       </Card>
-      
-      {/* Challenge Detail Dialog */}
-      <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
-        <DialogContent className="max-w-2xl">
-          <DialogHeader>
-            <div className="flex items-center gap-2">
-              <Badge variant="outline" className={typeInfo.color}>
-                <span className="mr-1">{typeInfo.icon}</span> {typeInfo.label}
-              </Badge>
-              <DialogTitle>Training with {challenge.title}</DialogTitle>
-            </div>
-            <DialogDescription>Level {step} Challenge</DialogDescription>
-          </DialogHeader>
-          
-          <div className="space-y-4">
-            <div className="bg-slate-50 p-4 rounded-lg border border-slate-200">
-              <h3 className="font-semibold text-sm text-slate-500 mb-2">ABOUT THE TRAINER</h3>
-              <p className="text-sm text-slate-700">{TRAINER_BACKGROUNDS[challenge.type]}</p>
-            </div>
-            
-            <div>
-              <h3 className="font-semibold text-sm text-slate-500 mb-2">THE CHALLENGE</h3>
-              <div className="bg-slate-50 p-4 rounded-lg border border-slate-200 relative">
-                <div className="absolute -top-3 -left-2 w-8 h-8 bg-white rounded-full border border-slate-200 flex items-center justify-center">
-                  {typeInfo.icon}
-                </div>
-                
-                <blockquote className="pl-4 border-l-2 border-slate-300 italic mb-4">
-                  {challenge.description.includes('"') 
-                    ? challenge.description.split('"')[1] 
-                    : "The path to growth begins with a single step."
-                  }
-                </blockquote>
-                
-                <p className="text-slate-700">
-                  {challenge.description.includes('"') 
-                    ? challenge.description.split('"')[2] 
-                    : challenge.description
-                  }
-                </p>
-              </div>
-            </div>
-            
-            <Separator />
-            
-            <div className="flex justify-between items-center">
-              {challenge.trainerPath ? (
-                <Button
-                  variant="outline"
-                  onClick={() => {
-                    setDialogOpen(false);
-                    router.push(challenge.trainerPath as string);
-                  }}
-                >
-                  Go to Trainer Page
-                </Button>
-              ) : (
-                <p className="text-sm text-slate-500">
-                  {isCompleted 
-                    ? "You've completed this challenge! Continue your journey."
-                    : "Are you ready to take on this challenge?"}
-                </p>
-              )}
-              
-              <DialogFooter className="sm:justify-end">
-                <Button
-                  variant={isCompleted ? "outline" : "default"}
-                  disabled={isLoading || isCompleted}
-                  onClick={handleMarkComplete}
-                  className={isCompleted ? "text-green-600 border-green-300" : ""}
-                >
-                  {isLoading ? 'Saving...' : isCompleted ? '✓ Completed' : 'Mark as Complete'}
-                </Button>
-              </DialogFooter>
-            </div>
-          </div>
-        </DialogContent>
-      </Dialog>
     </>
   );
 } 
