@@ -43,7 +43,7 @@ export default function BadgeMap({ badgeProgress, userId }: BadgeMapProps) {
     {
       id: 1,
       name: 'Stillness Badge',
-      description: 'Master the art of meditation and mindfulness to cultivate inner peace.',
+      description: 'Cultivate inner calm, mindfulness, and presence through meditation, prayer, and focused attention.',
       icon: '🧘‍♂️',
       color: 'bg-blue-500',
       bgColor: 'from-blue-500 to-blue-400',

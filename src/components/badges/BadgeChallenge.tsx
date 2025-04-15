@@ -8,6 +8,7 @@ import { supabase } from '@/lib/supabase';
 import { useRouter } from 'next/navigation';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogFooter } from '@/components/ui/dialog';
 import { Separator } from '@/components/ui/separator';
+import Link from 'next/link';
 
 // Challenge type mappings for icons and colors
 const CHALLENGE_TYPES = {
@@ -33,6 +34,7 @@ interface Challenge {
   title: string;
   description: string;
   completed: boolean;
+  trainerPath?: string;
 }
 
 interface BadgeChallengeProps {
@@ -301,7 +303,20 @@ export default function BadgeChallenge({
               <h3 className="font-semibold text-lg mb-1">{challenge.title}</h3>
               <p className="text-gray-600 mb-4">{challenge.description.split('"')[0]}</p>
               
-              <div className="flex justify-end">
+              <div className="flex justify-between">
+                {challenge.trainerPath && (
+                  <Button 
+                    variant="outline" 
+                    asChild 
+                    disabled={isLocked}
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <Link href={challenge.trainerPath}>
+                      Visit Trainer
+                    </Link>
+                  </Button>
+                )}
+                
                 <Button
                   variant={isCompleted ? "outline" : "default"}
                   disabled={isLoading || isLocked || isCompleted}
@@ -364,11 +379,23 @@ export default function BadgeChallenge({
             <Separator />
             
             <div className="flex justify-between items-center">
-              <p className="text-sm text-slate-500">
-                {isCompleted 
-                  ? "You've completed this challenge! Continue your journey."
-                  : "Are you ready to take on this challenge?"}
-              </p>
+              {challenge.trainerPath ? (
+                <Button
+                  variant="outline"
+                  onClick={() => {
+                    setDialogOpen(false);
+                    router.push(challenge.trainerPath as string);
+                  }}
+                >
+                  Go to Trainer Page
+                </Button>
+              ) : (
+                <p className="text-sm text-slate-500">
+                  {isCompleted 
+                    ? "You've completed this challenge! Continue your journey."
+                    : "Are you ready to take on this challenge?"}
+                </p>
+              )}
               
               <DialogFooter className="sm:justify-end">
                 <Button

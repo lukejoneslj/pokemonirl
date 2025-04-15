@@ -14,6 +14,7 @@ interface Challenge {
   title: string;
   description: string;
   completed: boolean;
+  trainerPath?: string; // Add this for linking to trainer pages
 }
 
 // Badge challenge data with trainers
@@ -22,37 +23,42 @@ const BADGE_CHALLENGES: Record<number, Challenge[]> = {
     { 
       id: 1, 
       type: 'study', 
-      title: 'Sister Serenity', 
-      description: '"Before you can quiet the world, you must quiet your heart." Watch a short devotional or video on stillness and journal your takeaways.', 
-      completed: false 
+      title: 'The Study Trainer', 
+      description: 'Learning the principles of stillness and mindfulness. Read "Mindfulness Workbook" from UW-Madison, "How to Pray" from LDS, and "Active Listening Techniques" from Positive Psychology. Study the benefits of reducing distractions and being present, and explore the concept of "beginner\'s mind."', 
+      completed: false,
+      trainerPath: '/trainers/stillness/study'
     },
     { 
       id: 2, 
       type: 'reflect', 
-      title: 'Brother Echo', 
-      description: '"What\'s louder—your life, or your thoughts?" Answer introspective questions about what distracts you and when you feel most calm.', 
-      completed: false 
+      title: 'The Reflect Trainer', 
+      description: 'Journaling and reflecting on personal experiences with stillness. Answer reflective questions: When did you feel truly present today? What distractions pull you away from the present moment? After trying breathing techniques, what did you notice? How do you experience stillness in your life? When has prayer brought you peace? How can prayer help cultivate daily stillness?', 
+      completed: false,
+      trainerPath: '/trainers/stillness/reflect'
     },
     { 
       id: 3, 
       type: 'roleplay', 
-      title: 'Elder Silence', 
-      description: '"You must sit with your soul to know it." Do a 5-minute silent reflection practice, imagining yourself being calm in chaos.', 
-      completed: false 
+      title: 'The Microlearning Trainer', 
+      description: 'Engaging in small, actionable practices of stillness. Practice mindful breathing for 5 minutes in silence. Eat one meal mindfully, focusing on taste and texture. Take a short walk without distractions, focusing on your senses. Practice active listening during one conversation with someone you don\'t usually listen to attentively. Pray aloud on your knees, expressing personal thoughts and feelings to God.', 
+      completed: false,
+      trainerPath: '/trainers/stillness/microlearning'
     },
     { 
       id: 4, 
       type: 'apply', 
-      title: 'Sister Willow', 
-      description: '"Stillness is not the absence of movement, but the presence of peace." Practice 10 minutes of stillness for 3 days—meditate, journal, pray, etc.', 
-      completed: false 
+      title: 'The Deeper Practice Trainer', 
+      description: 'Committing to a more significant period of stillness practice. Dedicate 15 minutes each day for two days to mindfulness or prayer. Complete two 4-hour sessions without using your phone during non-work hours, focusing on mindful activities instead of social media. Practice mindful listening during four separate conversations in one day.', 
+      completed: false,
+      trainerPath: '/trainers/stillness/deeper'
     },
     { 
       id: 5, 
       type: 'boss', 
-      title: 'Master Still', 
-      description: '"When the storm is loud, I am louder in my silence." Complete 7 consecutive days of stillness. Log a reflection each time.', 
-      completed: false 
+      title: 'The Stillness Master', 
+      description: 'Integrating stillness into daily life over an extended period. For one week, begin each day with 10-15 minutes of mindfulness practice and document your experience. Perform a 14-day social media fast, finding relaxing alternatives. Choose a specific daily activity and practice being fully present during it for one week, reflecting on your focus. Engage in a longer period of stillness during the week and journal about insights. At the end of the 14-day social media fast, write a comprehensive reflection on how stillness has affected your wellbeing.', 
+      completed: false,
+      trainerPath: '/trainers/stillness/master'
     },
   ],
   2: [ // Charity Badge
@@ -318,7 +324,7 @@ const BADGE_CHALLENGES: Record<number, Challenge[]> = {
 
 // Badge info
 const BADGES = {
-  1: { name: 'Stillness Badge', icon: '🧘‍♂️', color: 'bg-blue-500', description: 'Master the art of meditation and mindfulness to cultivate inner peace.' },
+  1: { name: 'Stillness Badge', icon: '🧘‍♂️', color: 'bg-blue-500', description: 'Cultivate inner calm, mindfulness, and presence through meditation, prayer, and focused attention.' },
   2: { name: 'Charity Badge', icon: '❤️', color: 'bg-red-500', description: 'Serve others selflessly with acts of kindness and generosity.' },
   3: { name: 'Virtue Badge', icon: '⭐', color: 'bg-yellow-500', description: 'Develop moral character through daily practice of virtuous actions.' },
   4: { name: 'Courage Badge', icon: '🦁', color: 'bg-amber-500', description: 'Face your fears and stand for truth even when it\'s difficult.' },

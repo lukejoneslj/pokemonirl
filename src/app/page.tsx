@@ -82,7 +82,7 @@ export default function Home() {
             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
               {[
-                { name: 'Stillness', color: 'bg-blue-500', icon: '🧘‍♂️', desc: 'Inner peace through meditation' },
+                { name: 'Stillness', color: 'bg-blue-500', icon: '🧘‍♂️', desc: 'Inner calm through mindfulness and prayer' },
                 { name: 'Charity', color: 'bg-red-500', icon: '❤️', desc: 'Selfless acts of kindness' },
                 { name: 'Virtue', color: 'bg-yellow-500', icon: '⭐', desc: 'Daily practice of moral character' },
                 { name: 'Courage', color: 'bg-amber-500', icon: '🦁', desc: 'Face fears, stand for truth' },
